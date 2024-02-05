@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>User Information</title>
+</head>
+<body>
+    <h2>User Information</h2>
+    {% if user_info %}
+        <p><strong>Username:</strong> {{ user_info.username }}</p>
+        <p><strong>First Name:</strong> {{ user_info.first_name }}</p>
+        <p><strong>Last Name:</strong> {{ user_info.last_name }}</p>
+        <p><strong>Email:</strong> {{ user_info.email }}</p>
+    {% else %}
+        <p>User not found</p>
+    {% endif %}
+    <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+</body>
+</html>
+
